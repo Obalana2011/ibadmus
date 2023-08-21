@@ -1,13 +1,9 @@
-provider "aws" {
-    
-    region = "us-east-1"  
-}
+# terraform/modules/s3/main.tf
 
 resource "aws_s3_bucket" "frontend_bucket" {
     bucket = "ibadmus-resume-site-bucket"
     force_destroy = true
     acl = "public-read"
-    #acl = "public-read-write"
 }
  
 resource "aws_s3_bucket_ownership_controls" "example" {
@@ -63,3 +59,4 @@ resource "aws_s3_bucket_website_configuration" "bucket_config" {
         suffix = "index.html"
     }
 }
+
