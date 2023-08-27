@@ -23,11 +23,8 @@ jobs:
     
     - name: #Print out secrets
     - name: Run script with secret
-        run: |
-          # Explicitly mask the secret
-          echo "Secret: ${{ secrets.PERSONAL_SITE_CF_ID }}"
-
-
+      run: echo "Personal Site id: ${{ secrets.PERSONAL_SITE_CF_ID }}"
+        
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./src/frontend/ s3://ibadmus-resume-site-bucket --delete
     - name: Deploy to cloudfront
