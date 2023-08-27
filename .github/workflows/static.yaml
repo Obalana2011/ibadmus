@@ -21,9 +21,8 @@ jobs:
         aws-region: us-east-1 # Use your bucket region here
         
     
-    - name: #Print out secrets
-    - name: Run script with secret
-      run: echo ${{ secrets.PERSONAL_SITE_CF_ID }}
+    #- name: #Print out secrets
+    #  run: echo "Personal Site id: ${{ secrets.PERSONAL_SITE_CF_ID }}
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./src/frontend/ s3://ibadmus-resume-site-bucket --delete
